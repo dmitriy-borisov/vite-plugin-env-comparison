@@ -1,0 +1,55 @@
+{
+  "name": "vite-plugin-env-comparison",
+  "version": "1.0.0",
+  "description": "Plugin is used for synchronization environment variables from sample file to another one",
+  "license": "MIT",
+  "author": {
+    "name": "Dmitriy Borisov",
+    "url": "https://github.com/dmitriy-borisov"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "env",
+    "environment variables",
+    "comparison",
+    "synchronization"
+  ],
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/plugin.d.ts",
+  "main": "./dist/plugin.js",
+  "module": "./dist/plugin.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/plugin.d.ts",
+      "import": "./dist/plugin.mjs",
+      "require": "./dist/plugin.js"
+    }
+  },
+  "scripts": {
+    "start": "npm run build -- --watch",
+    "build": "tsup src/plugin.ts --dts --format cjs,esm --clean",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest --dir tests",
+    "test:ci": "vitest run --dir tests"
+  },
+  "devDependencies": {
+    "@types/node": "18.16.1",
+    "@typescript-eslint/eslint-plugin": "5.59.1",
+    "@typescript-eslint/parser": "5.59.1",
+    "eslint": "8.39.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "prettier": "2.8.8",
+    "tsup": "6.7.0",
+    "typescript": "4.9.5",
+    "vitest": "0.30.1"
+  },
+  "peerDependencies": {
+    "vite": "^4.3.0"
+  }
+}
